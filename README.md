@@ -29,7 +29,9 @@ role, ensuring secure logging and monitoring.
 
 ## 🏗️ Architecture Diagram
 
-(Add your diagram here if needed)
+
+![Screenshot](./screenshot/diagram.png)
+
 
 ------------------------------------------------------------------------
 
@@ -42,6 +44,7 @@ role, ensuring secure logging and monitoring.
 -   Provide a name\
 -   Keep default CIDR\
 -   Create VPC
+![Screenshot](./screenshot/1.jpg)
 
 ------------------------------------------------------------------------
 
@@ -54,12 +57,13 @@ role, ensuring secure logging and monitoring.
 -   Enable *Versioning*\
 -   Create bucket
 
+![Screenshot](./screenshot/2.jpg)
 ------------------------------------------------------------------------
 
 ## **Step 3: Add Bucket Policy**
 
 Add policy to allow VPC Flow Logs to write to S3.
-
+![Screenshot](./screenshot/3.jpg)
 ------------------------------------------------------------------------
 
 ## **Step 4: Create IAM Role (Trust Policy)**
@@ -69,14 +73,14 @@ Add policy to allow VPC Flow Logs to write to S3.
 -   Paste trust policy JSON\
 -   Skip permissions\
 -   Name and create role
-
+![Screenshot](./screenshot/vpcpolicy.jpg)
 ------------------------------------------------------------------------
 
 ## **Step 5: Attach Permission Policy**
 
 -   Go to IAM → Role → *Permissions*\
 -   Add inline policy with S3 write permissions
-
+![Screenshot](./screenshot/vpcjson.jpg)
 ------------------------------------------------------------------------
 
 ## **Step 6: Enable VPC Flow Logs**
@@ -98,7 +102,7 @@ SSH into EC2 and run:
     ping google.com
 
 This generates network traffic for the flow logs.
-
+![Screenshot](./screenshot/4.jpg)
 ------------------------------------------------------------------------
 
 ## **Step 8: Verify Logs in S3**
@@ -108,7 +112,7 @@ Navigate in S3:
     AWSLogs/<account-id>/vpcflowlogs/<region>/<date>/
 
 Download the log file and verify captured entries.
-
+![Screenshot](./screenshot/5.jpg)
 ------------------------------------------------------------------------
 
 # 🏁 Conclusion
